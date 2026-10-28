@@ -94,17 +94,11 @@ npm test 2>&1 | grep 'DEBUG git init'
 - Find the line number triggering the call
 - Identify the pattern (same test? same parameter?)
 
-## Finding Which Test Causes Pollution
+## Automated test pollution
 
-If something appears during tests but you don't know which test:
-
-Use the bisection script `find-polluter.sh` in this directory:
-
-```bash
-bash ./find-polluter.sh '.git' 'src/**/*.test.ts'
-```
-
-Runs tests one-by-one, stops at first polluter. See script for usage.
+When automated test investigation is authorized, the optional testing module
+contains the `find-polluter.sh` bisection helper. It is not part of core and
+must not be used to introduce automated testing into UAT-only work.
 
 ## Real Example: Empty projectDir
 

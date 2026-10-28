@@ -5,6 +5,13 @@ description: Use when encountering any bug, test failure, or unexpected behavior
 
 # Systematic Debugging
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 ## Overview
 
 **Core principle:** ALWAYS find root cause before attempting fixes. Symptom fixes are failure.
@@ -169,12 +176,13 @@ You MUST complete each phase before proceeding to the next.
 
 **Fix the root cause, not the symptom:**
 
-1. **Create Failing Test Case**
-   - Simplest possible reproduction
-   - Automated test if possible
-   - One-off test script if no framework
-   - MUST have before fixing
-   - Use the `superpowers:test-driven-development` skill for writing proper failing tests
+1. **Capture the Failure**
+   - Resolve the mode through the shared `verification-policy`.
+   - Reproduce through the actual consumer interface when possible.
+   - Record setup, actions, expected result, and observed failure.
+   - If reproduction is unavailable, state that limitation and the evidence
+     supporting the diagnosis; do not invent a failure or require a test script.
+   - Automated reproduction is conditional on the selected policy.
 
 2. **Implement Single Fix**
    - Address the root cause identified
@@ -183,10 +191,10 @@ You MUST complete each phase before proceeding to the next.
    - No bundled refactoring
 
 3. **Verify Fix**
-   - Test passes now?
-   - No other tests broken?
+   - Original symptom resolved in the selected verification method?
+   - Relevant neighboring behavior checked according to project policy?
    - Issue actually resolved?
-   - Use the `superpowers:verification-before-completion` skill before claiming success
+   - Use the `superpowers-core:verification-before-completion` skill before claiming success
 
 4. **If Fix Doesn't Work**
    - STOP
@@ -217,7 +225,7 @@ If you catch yourself thinking:
 - "Quick fix for now, investigate later"
 - "Just try changing X and see if it works"
 - "Add multiple changes, run tests"
-- "Skip the test, I'll manually verify"
+- "Skip the required evidence and assume the fix worked"
 - "It's probably X, let me fix that"
 - "I don't fully understand but this might work"
 - "Pattern says X but I'll adapt it differently"
@@ -248,7 +256,7 @@ If you catch yourself thinking:
 | "Issue is simple, don't need process" | Simple issues have root causes too. Process is fast for simple bugs. |
 | "Emergency, no time for process" | Systematic debugging is FASTER than guess-and-check thrashing. |
 | "Just try this first, then investigate" | First fix sets the pattern. Do it right from the start. |
-| "I'll write test after confirming fix works" | Untested fixes don't stick. Test first proves it. |
+| "The code looks right, so the bug is fixed" | Verify the original symptom using the selected method. |
 | "Multiple fixes at once saves time" | Can't isolate what worked. Causes new bugs. |
 | "Reference too long, I'll adapt the pattern" | Partial understanding guarantees bugs. Read it completely. |
 | "I see the problem, let me fix it" | Seeing symptoms ≠ understanding root cause. |
@@ -261,7 +269,7 @@ If you catch yourself thinking:
 | **1. Root Cause** | Read errors, reproduce, check changes, gather evidence | Understand WHAT and WHY |
 | **2. Pattern** | Find working examples, compare | Identify differences |
 | **3. Hypothesis** | Form theory, test minimally | Confirmed or new hypothesis |
-| **4. Implementation** | Create test, fix, verify | Bug resolved, tests pass |
+| **4. Implementation** | Capture failure, fix, verify | Bug resolution supported by observed evidence |
 
 ## When Process Reveals "No Root Cause"
 
@@ -280,4 +288,4 @@ These techniques are part of systematic debugging and available in this director
 
 - **`root-cause-tracing.md`** - Trace bugs backward through call stack to find original trigger
 - **`defense-in-depth.md`** - Add validation at multiple layers after finding root cause
-- **`condition-based-waiting.md`** - Replace arbitrary timeouts with condition polling
+Automated test debugging helpers are in the optional `superpowers-testing` module; use them only for authorized automated work.

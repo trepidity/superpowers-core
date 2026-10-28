@@ -1,20 +1,21 @@
 {
-  "name": "superpowers-dev",
-  "description": "Development marketplace for Superpowers core skills library",
+  "name": "superpowers-local",
   "owner": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "trepidity"
   },
   "plugins": [
     {
-      "name": "superpowers",
-      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
-      "version": "7.0.0",
+      "name": "superpowers-core",
       "source": "./",
-      "author": {
-        "name": "Jesse Vincent",
-        "email": "jesse@fsck.com"
-      }
+      "version": "1.0.1",
+      "description": "Planning, debugging, implementation, and review under project verification policy"
+    },
+    {
+      "name": "superpowers-testing",
+      "source": "./optional/testing",
+      "version": "1.0.1",
+      "description": "Optional automated testing techniques; not required by core"
     }
-  ]
+  ],
+  "description": "Local Superpowers customization with optional testing and shared verification policy"
 }

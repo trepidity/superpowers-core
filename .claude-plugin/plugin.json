@@ -1,20 +1,19 @@
 {
-  "name": "superpowers",
-  "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
-  "version": "7.0.0",
+  "name": "superpowers-core",
+  "description": "Superpowers workflows with project-owned verification; automated testing is optional.",
+  "version": "1.0.1",
   "author": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "Superpowers contributors and trepidity",
+    "url": "https://github.com/trepidity/superpowers-core"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/trepidity/superpowers-core",
+  "repository": "https://github.com/trepidity/superpowers-core",
   "license": "MIT",
   "keywords": [
-    "skills",
-    "tdd",
+    "planning",
     "debugging",
-    "collaboration",
-    "best-practices",
-    "workflows"
+    "code-review",
+    "workflow",
+    "uat"
   ]
 }

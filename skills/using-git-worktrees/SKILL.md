@@ -5,6 +5,13 @@ description: Use when starting feature work that needs isolation from current wo
 
 # Using Git Worktrees
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 ## Overview
 
 Ensure work happens in an isolated workspace. Prefer your platform's native worktree tools. Fall back to manual git worktrees only when no native tool is available.
@@ -97,7 +104,7 @@ git worktree add "$path" -b "$BRANCH_NAME"
 cd "$path"
 ```
 
-**Sandbox fallback:** If `git worktree add` fails with a permission error (sandbox denial), tell the user the sandbox blocked worktree creation and you're working in the current directory instead. Then run setup and baseline tests in place.
+**Sandbox fallback:** If `git worktree add` fails with a permission error (sandbox denial), tell the user the sandbox blocked worktree creation and you're working in the current directory instead. Then run setup and the selected baseline checks in place.
 
 ## Step 2: Project Setup
 
@@ -118,26 +125,15 @@ if [ -f pyproject.toml ]; then poetry install; fi
 if [ -f go.mod ]; then go mod download; fi
 ```
 
-## Step 3: Verify Clean Baseline
+## Step 3: Establish the baseline
 
-Run tests to ensure workspace starts clean:
+Read the shared `verification-policy` and the project's declared checks. Record
+the initial revision and relevant existing failures. For UAT-only work, use
+manual observations and any selected static checks; do not demand a test suite.
+For automated or hybrid work, run the established applicable checks.
 
-```bash
-# Use project-appropriate command
-npm test / cargo test / pytest / go test ./...
-```
-
-**If tests fail:** Report failures, ask whether to proceed or investigate.
-
-**If tests pass:** Report ready.
-
-### Report
-
-```
-Worktree ready at <full-path>
-Tests passing (<N> tests, 0 failures)
-Ready to implement <feature-name>
-```
+Report workspace path, branch, checks actually performed, and any known gaps.
+A clean checkout alone does not prove behavior.
 
 ## Quick Reference
 
@@ -153,7 +149,7 @@ Ready to implement <feature-name>
 | Neither exists | Check instruction file, then default `.worktrees/` |
 | Directory not ignored | Add to .gitignore + commit |
 | Permission error on create | Sandbox fallback, work in place |
-| Tests fail during baseline | Report failures + ask |
+| Required baseline check fails | Report the failure and its effect on the task |
 | No package.json/Cargo.toml | Skip dependency install |
 
 ## Common Rationalizations
@@ -164,4 +160,4 @@ Ready to implement <feature-name>
 | "`git worktree add` is quicker than hunting for a native tool" | A native tool (e.g. `EnterWorktree`) owns placement, branching, and cleanup. Bypassing it is the #1 mistake — it creates phantom state your harness can't see or manage. |
 | "The worktree directory is surely ignored already" | Run `git check-ignore`. An unignored worktree directory commits the whole tree into the repo. |
 | "Any directory name works" | Explicit instructions beat an existing project-local directory, which beats the `.worktrees/` default. |
-| "The workspace is fresh — baseline tests can wait" | A dirty baseline makes every later failure ambiguous. Run the tests now; proceeding past failures is your human partner's call. |
+| "The workspace is fresh, so behavior is correct" | Record the selected baseline observations; a new directory is not behavioral evidence. |

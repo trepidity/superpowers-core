@@ -5,6 +5,13 @@ description: Use when facing 2+ independent tasks that can be worked on without 
 
 # Dispatching Parallel Agents
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 ## Overview
 
 You delegate tasks to specialized agents with isolated context. By precisely crafting their instructions and context, you ensure they stay focused and succeed at their task. They should never inherit your session's context or history — you construct exactly what they need. This also preserves your own context for coordination work.
@@ -81,7 +88,7 @@ Multiple dispatch calls in one response = parallel execution. One per response =
 When agents return:
 - Read each summary
 - Verify fixes don't conflict
-- Run full test suite
+- Perform the project-selected integration checks
 - Integrate all changes
 
 ## Agent Prompt Structure
@@ -163,5 +170,5 @@ Agent 3 → Fix tool-approval-race-conditions.test.ts
 After agents return:
 1. **Review each summary** - Understand what changed
 2. **Check for conflicts** - Did agents edit same code?
-3. **Run full suite** - Verify all fixes work together
+3. **Verify integration under policy** - Exercise the selected checks or UAT scenarios across the combined changes
 4. **Spot check** - Agents can make systematic errors

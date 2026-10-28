@@ -70,26 +70,15 @@ Subagent (general-purpose):
     implementer grading their own work. Judge the code on its merits — a
     stated rationale never downgrades a finding's severity.
 
-    ## Tests
+    ## Verification
 
-    The implementer already ran the tests and reported results with TDD
-    evidence for exactly this code. Do not re-run the suite to confirm their
-    report. Run a test only when reading the code raises a specific doubt
-    that no existing run answers — and then a focused test, never a
-    package-wide suite, race detector run, or repeated/high-count loop. If
-    heavy validation seems warranted, recommend it in your report instead of
-    running it. If you cannot run commands in this environment, name the
-    test you would run.
-
-    Warnings or other noise in the implementer's reported test output are
-    findings — test output should be pristine.
-
-    Evidence you cannot see is not evidence that doesn't exist. If the
-    report or its test evidence looks truncated, or you cannot locate the
-    results it claims, re-read the file at its stated path — and if it is
-    genuinely missing or garbled, report that as a gap for the controller.
-    Re-running the suite to regenerate what you failed to read is not
-    verification; illegibility of the evidence is not invalidation of it.
+    Read the mode and authority source supplied in the brief. Inspect the
+    report's evidence against the changed code and selected requirements.
+    Missing automated tests are not a defect in UAT-only work. Missing required
+    observations are an evidence gap. Do not turn a build result into UAT proof.
+    If evidence is missing or unreadable, locate it or report the gap. Perform
+    additional checks only when authorized by the selected mode and a concrete
+    concern justifies them. Keep user acceptance distinct from agent checks.
 
     ## Part 1: Spec Compliance
 
@@ -120,9 +109,9 @@ Subagent (general-purpose):
     - DRY without premature abstraction?
     - Edge cases handled?
 
-    **Tests:**
-    - Do the new and changed tests verify real behavior, not mocks?
-    - Are the task's edge cases covered?
+    **Evidence:**
+    - Does the selected evidence demonstrate actual behavior?
+    - Are relevant edge cases exercised or explicitly pending?
 
     **Structure:**
     - Does each file have one clear responsibility with a well-defined interface?

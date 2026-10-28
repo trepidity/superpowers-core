@@ -5,6 +5,13 @@ description: "You MUST use this before any creative work - creating features, bu
 
 # Brainstorming
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 You are very good at building. You build what you believe your human
 partner wants, and that belief is usually thinner than it feels. This
 skill is for finding out what they actually want, and why, before
@@ -135,7 +142,7 @@ words. They can override it.
 |------|----------------------|------|
 | A quick, clear task | the request itself | do it |
 | A small change | in chat | build it through the normal workflow |
-| A project with a written design | a written design document | a full plan (for software: superpowers:writing-plans) |
+| A project with a written design | a written design document | a full plan (for software: superpowers-core:writing-plans) |
 
 If it grows mid-task, stop, say so, and step up a size.
 
@@ -189,7 +196,7 @@ stays labeled throwaway, and keeping what it produced is a new request
 that comes back through this gate.
 
 After a project's document is approved, the next step is the plan. For
-software, invoke superpowers:writing-plans and no other skill.
+software, invoke superpowers-core:writing-plans and no other skill.
 </HARD-GATE>
 
 ## Red Flags

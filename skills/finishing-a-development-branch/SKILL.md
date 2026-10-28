@@ -1,29 +1,32 @@
 ---
 name: finishing-a-development-branch
-description: Use when implementation is complete, all tests pass, and you need to decide how to integrate the work
+description: Use when implementation is ready for handoff, and you need to decide how to integrate the work
 ---
 
 # Finishing a Development Branch
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 ## Overview
 
-**Core principle:** Verify tests → Detect environment → Present options → Execute choice → Clean up.
+**Core principle:** Verify selected evidence → Detect environment → Present options → Execute choice → Clean up.
 
 **Announce at start:** "I'm using the finishing-a-development-branch skill to complete this work."
 
-## Step 1: Verify Tests
+## Step 1: Check the selected verification gates
 
-Run the project's full test suite (`npm test` / `cargo test` / `pytest` / `go test ./...`).
+Read the shared `verification-policy` and identify the project's integration
+requirements. Collect the required evidence and report any failed or pending
+gate. Do not create or demand a test suite in UAT-only mode.
 
-**If tests fail**, report the failures and stop — the menu comes after a green suite:
-
-```
-Tests failing (<N> failures). Must fix before completing:
-
-[Show failures]
-```
-
-**If tests pass:** continue to Step 2.
+If acceptance is pending, a branch or draft handoff may still be ready; do not
+claim accepted completion or merge past a required gate without authority.
+When the selected requirements for the requested action are satisfied, continue.
 
 ## Step 2: Detect Environment
 
@@ -95,11 +98,11 @@ git checkout <base-branch>
 git pull
 git merge <feature-branch>
 
-# Verify tests on merged result
-<test command>
+# Perform the selected checks on the merged result
+<project-selected verification>
 ```
 
-If tests fail on the merged result: stop, leave the worktree and branch in
+If a required check fails on the merged result: stop, leave the worktree and branch in
 place, and investigate — nothing has been pushed, so the merge is local
 and recoverable.
 
@@ -213,7 +216,7 @@ place. If your platform provides a workspace-exit tool, use it.
 
 | Excuse | Reality |
 |--------|---------|
-| "Tests passed earlier this session" | Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on. |
+| "Checks passed on another revision" | Confirm the evidence applies to the tree being integrated. |
 | "They obviously want it merged" | Integration is your human partner's decision. Present the menu and wait. |
 | "They seem done with this feature — I'll offer to discard it" | The menu is complete as written. Discard happens only when your human partner asks for it in so many words. |
 | "'Yeah, get rid of it' counts as confirmation" | Only the typed word `discard` authorizes deletion. |

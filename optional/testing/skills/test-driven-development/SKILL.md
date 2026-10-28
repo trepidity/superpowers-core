@@ -1,9 +1,17 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: Optional test-driven-development technique for explicitly selected automated work; never selects verification mode or applies to UAT-only work
 ---
 
 # Test-Driven Development (TDD)
+
+## Scope gate
+
+Read the shared `verification-policy` first. Apply the workflow below only when
+the user or project explicitly selected this automated technique. In UAT-only
+mode stop this skill and return to the core workflow. Every "always", "must",
+and test-first rule below is scoped to that selection; none overrides policy.
+
 
 ## Overview
 

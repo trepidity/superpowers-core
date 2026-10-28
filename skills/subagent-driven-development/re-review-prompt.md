@@ -61,15 +61,15 @@ Subagent (general-purpose):
     does not block this task and does not extend the loop. A broad
     whole-branch review happens after all tasks are complete.
 
-    ## Tests
+    ## Verification
 
-    The implementer re-ran the tests covering the amended code and appended
-    the results to the report file. Treat the report as unverified claims:
-    confirm the fix report names the covering tests and shows their output,
-    and verify the claims against the diff. Do not re-run the suite to
-    confirm their report. Run a test only when reading the code raises a
-    specific doubt that no existing run answers — and then a focused test,
-    never a package-wide suite.
+    Read the mode and authority source supplied in the brief. Inspect the
+    report's evidence against the changed code and selected requirements.
+    Missing automated tests are not a defect in UAT-only work. Missing required
+    observations are an evidence gap. Do not turn a build result into UAT proof.
+    If evidence is missing or unreadable, locate it or report the gap. Perform
+    additional checks only when authorized by the selected mode and a concrete
+    concern justifies them. Keep user acceptance distinct from agent checks.
 
     ## Output Format
 

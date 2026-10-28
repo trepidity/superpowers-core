@@ -89,7 +89,7 @@ PLAN
     out="$(cd "$repo" && "$EP_SCRIPTS/task-done" plan.md 1 "$base" -- sh -c 'echo "Ran 3 tests"; echo OK')"
     rc=$?
     local ledger="$repo/.superpowers/sdd/plan/progress.md"
-    local expected="Task 1: complete (commits ${base:0:7}..${head:0:7}, tests: sh -c 'echo \"Ran 3 tests\"; echo OK' → OK)"
+    local expected="Task 1: complete (commits ${base:0:7}..${head:0:7}, verification: sh -c 'echo \"Ran 3 tests\"; echo OK' → OK)"
     if [[ -f "$ledger" ]] && grep -qF "$expected" "$ledger"; then
         pass "task-done appends the completion line with commit range and test result"
     else
@@ -103,7 +103,7 @@ PLAN
         fail "task-done prints the tail of the test output"
         echo "    got: $out"
     fi
-    if [[ -s "$repo/.superpowers/sdd/plan/task-1-tests.log" ]]; then
+    if [[ -s "$repo/.superpowers/sdd/plan/task-1-verification.log" ]]; then
         pass "task-done keeps the full test output in the workspace"
     else
         fail "task-done keeps the full test output in the workspace"
@@ -145,7 +145,7 @@ PLAN
         fail "task-done exits 0 when a passing test command prints nothing (got rc=$rc)"
         echo "    got: $out"
     fi
-    local expected2="Task 2: complete (commits ${head:0:7}..${head2:0:7}, tests: true → (no output))"
+    local expected2="Task 2: complete (commits ${head:0:7}..${head2:0:7}, verification: true → (no output))"
     if [[ -f "$ledger" ]] && grep -qF "$expected2" "$ledger"; then
         pass "task-done records a passing task that printed no output"
     else

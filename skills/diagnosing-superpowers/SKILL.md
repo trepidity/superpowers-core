@@ -5,6 +5,13 @@ description: Use when a superpowers session went wrong and your human partner wa
 
 # Diagnosing Superpowers
 
+Resolve verification through the shared `verification-policy` skill and carry
+the mode and source into worker briefs. Core never selects automated testing.
+In UAT-only mode, use acceptance scenarios and observations; do not require test
+files, test-first evidence, or test suite runs. Testing examples below apply
+only when automated work was selected by the user or project.
+
+
 ## Overview
 
 Pin down with your human partner what went wrong in a session, read the

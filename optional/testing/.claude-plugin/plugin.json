@@ -1,0 +1,12 @@
+{
+  "name": "superpowers-testing",
+  "version": "1.0.1",
+  "description": "Optional automated testing techniques; project verification policy always governs.",
+  "license": "MIT",
+  "author": {
+    "name": "Superpowers contributors and trepidity",
+    "url": "https://github.com/trepidity/superpowers-core"
+  },
+  "repository": "https://github.com/trepidity/superpowers-core",
+  "homepage": "https://github.com/trepidity/superpowers-core"
+}

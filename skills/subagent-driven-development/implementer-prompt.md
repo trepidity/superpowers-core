@@ -33,7 +33,7 @@ Subagent (general-purpose):
 
     Once you're clear on requirements:
     1. Implement exactly what the task specifies
-    2. Write tests (following TDD if task says to)
+    2. Read the selected verification mode and its authority source in the brief
     3. Verify implementation works
     4. Commit your work
     5. Self-review (see below)
@@ -44,8 +44,9 @@ Subagent (general-purpose):
     **While you work:** If you encounter something unexpected or unclear, **ask questions**.
     It's always OK to pause and clarify. Don't guess or make assumptions.
 
-    While iterating, run the focused test for what you're changing; run the
-    full suite once before committing, not after every edit.
+    Collect the project-selected evidence for the changed behavior. In UAT-only
+    mode, use acceptance scenarios; do not write tests or assertion scripts.
+    Record unavailable or human-only acceptance as pending.
 
     ## You Do Not Dispatch Subagents
 
@@ -108,31 +109,30 @@ Subagent (general-purpose):
     - Did I only build what was requested?
     - Did I follow existing patterns in the codebase?
 
-    **Testing:**
-    - Do tests actually verify behavior (not just mock behavior)?
-    - Did I follow TDD if required?
-    - Are tests comprehensive?
-    - Is the test output pristine (no stray warnings or noise)?
+    **Verification:**
+    - Did I follow the selected mode and its source?
+    - Do observations demonstrate the claimed behavior?
+    - Are required edge cases addressed and pending acceptance clearly identified?
+    - Are failures or warnings explained without hiding them?
 
     If you find issues during self-review, fix them now before reporting.
 
     ## After Review Findings
 
     If the task review finds issues, you will be resumed with the findings.
-    Fix them, re-run the tests that cover the amended code, and append a fix
-    report to your report file: what you changed, the covering tests you
-    ran, the command, and the output. Reviewers will not re-run tests for
-    you — your report is the test evidence. Then reply with the same short
-    status contract as your first report.
+    Fix them, repeat the applicable verification, and append a fix report:
+    what changed, what was exercised, observed results, and remaining gaps.
+    Keep human acceptance pending when it has not occurred. Then reply with
+    the same short status contract as your first report.
 
     ## Report Format
 
     Write your full report to [REPORT_FILE]:
     - What you implemented (or what you attempted, if blocked)
-    - What you tested and test results
-    - **TDD Evidence** (if TDD was required for this task):
-      - RED: command run, relevant failing output before implementation, and why the failure was expected
-      - GREEN: command run and relevant passing output after implementation
+    - Selected verification mode and authority source
+    - Checks or UAT scenarios performed and observed results
+    - Pending checks or user acceptance
+
     - Files changed
     - Self-review findings (if any)
     - Any issues or concerns
@@ -141,7 +141,7 @@ Subagent (general-purpose):
     report file):
     - **Status:** DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT
     - Commits created (short SHA + subject)
-    - One-line test summary (e.g. "14/14 passing, output pristine")
+    - One-line verification summary (e.g. "build passed; selection scenario passed; user UAT pending")
     - Your concerns, if any
     - The report file path
 

@@ -80,11 +80,12 @@ Subagent (general-purpose):
     - Security concerns?
     - Integrates cleanly with surrounding code?
 
-    **Testing:**
-    - Tests verify real behavior, not mocks?
-    - Edge cases covered?
-    - Integration tests where they matter?
-    - All tests passing?
+    **Verification:**
+    - Resolve the mode from the brief and shared verification-policy.
+    - Does the selected evidence support the behavioral claims?
+    - Are edge cases exercised or explicitly pending?
+    - UAT-only work does not owe automated tests or TDD evidence.
+    - Distinguish static checks, agent observations, and user acceptance.
 
     **Production readiness:**
     - Migration strategy if schema changed?
@@ -114,7 +115,7 @@ Subagent (general-purpose):
     [Bugs, security issues, data loss risks, broken functionality]
 
     #### Important (Should Fix)
-    [Architecture problems, missing features, poor error handling, test gaps]
+    [Architecture problems, missing features, poor error handling, missing required evidence]
 
     #### Minor (Nice to Have)
     [Code style, optimization opportunities, documentation polish]
