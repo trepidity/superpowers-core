@@ -20,12 +20,41 @@ Write implementation plans for an engineer who has not seen this codebase or thi
 
 **Context:** If working in an isolated worktree, it should have been created via the `superpowers-core:using-git-worktrees` skill at execution time.
 
-**Save plans to:** `docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`
-- (User preferences for plan location override this default)
+**Save plans to:** `docs/domains/<domain>/plans/plan-NNN-<topic>.md` as a
+plan record (shape below) when the project keeps records under
+`docs/domains/` or the design is being broken out into records; otherwise
+`docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`.
+- (User preferences for plan location override both)
 
 ## Scope Check
 
 If the spec covers multiple independent subsystems, it should have been broken into sub-project specs during brainstorming. If it wasn't, suggest breaking this into separate plans — one per subsystem. Each plan should produce working, testable software on its own.
+
+## Records
+
+The approved design is a narrative. Before planning, break its governing
+content out into records so later work finds requirements, decisions and
+specifications by filename instead of inside the design. Follow
+superpowers-core:project-records, section *Extracting records from an
+approved design*:
+
+1. **Match existing records.** List `docs/domains/`. Where the design
+   restates, revises or contradicts an existing record, edit that record in
+   place or write a replacement with `supersedes`; never a duplicate. A
+   contradiction with an accepted record is named in the hand-off for the
+   owner; the plan is still written.
+2. **Extract.** One requirement per independent obligation, one decision per
+   choice the design made, one specification per cohesive contract, per the
+   skill's table. Each record's Evidence cites the design path, commit and
+   approval date. New records are `proposed`.
+3. **Write the plan as a plan record** (shape below) whose Governing Records
+   cite each record and the design by path.
+4. **Append `## Records`** to the design document listing the IDs and paths
+   extracted from it.
+
+A repo with no `docs/domains/` gets its first domain here; pick a short
+unused prefix and state it in the hand-off. If your human partner asked for
+a plain plan with no records, skip this section and use the legacy header.
 
 ## File Structure
 
@@ -62,7 +91,22 @@ where selected by project authority.
 
 ## Plan Document Header
 
-**Every plan MUST start with this header:**
+**A plan record** uses the plan template in
+`superpowers-core:project-records/references/templates.md`: PKC frontmatter,
+the H1, the agentic-worker banner, then exactly these H2s in order, with the
+header content placed as follows:
+
+| H2 | Holds |
+| --- | --- |
+| Outcome and Scope | Goal, Architecture, Tech Stack, Included, Excluded |
+| Governing Records | One line per record: `ID — path — status — what it constrains`; the design document path; then `### Global Constraints` (as below) |
+| Steps | One `### Task N` per task (Task Structure below) |
+| Dependencies and Risks | Dependencies, risks, then `### Review Focus` (as below) |
+| Verification | Mode, authority source, required checks, who accepts UAT |
+| Completion Evidence | `None.` The executor writes it once from its ledger when the plan is done |
+| Open Questions | Open questions, or `None.` |
+
+**A legacy plan** (no records) MUST start with this header:
 
 ```markdown
 # [Feature Name] Implementation Plan
@@ -115,6 +159,9 @@ owns the code, in that task's own step style.]
 - Consumes: [exact signatures from earlier tasks]
 - Produces: [exact signatures later tasks use]
 
+**Governing:** [record IDs and sections that constrain this task, including
+the dependencies reached through `depends_on`; omit in a legacy plan]
+
 **Verification:** [selected mode and authority source]
 
 - [ ] **Step 1: Specify the acceptance scenario**
@@ -166,7 +213,7 @@ opposite failure, and the self-review catches both.
 
 After writing the complete plan, look at the spec with fresh eyes and check the plan against it. This is a checklist you run yourself — not a subagent dispatch.
 
-**1. Spec coverage:** Skim each section/requirement in the spec. Can you point to a task that implements it? List any gaps.
+**1. Spec coverage:** Skim each section/requirement in the spec and in every governing record. Can you point to a task that implements it? List any gaps.
 
 **2. Step scan:** Every step must let the implementer write exactly one reasonable thing, and no step may carry more than that: a line that decides nothing is a gap, a function body the signature and acceptance criteria already determine is a transcript. Fix both.
 
@@ -181,7 +228,13 @@ If you find issues, fix them inline. No need to re-review — just fix and move 
 ## Execution Handoff
 
 After saving and self-reviewing the plan, link it for your human partner
-to read. If they have already explicitly supplied an execution method, ask
+to read. When the plan is a record, the hand-off opens with the records:
+
+**"The plan is a record at `<path>`. Records created: `<IDs and paths>`;
+changed: `<IDs>`; prefix `<PREFIX>` (new). Say `accept <IDs>` to mark any
+of these accepted."** Add **"Contradiction with `<ID>`: <one line>."** when
+the design contradicted an accepted record. Then continue below.
+ If they have already explicitly supplied an execution method, ask
 them to review the plan and confirm it captures what they want; wait for that
 review before implementation, then use the preserved method. Otherwise, ask
 them to review the plan and choose an execution method before implementation.
