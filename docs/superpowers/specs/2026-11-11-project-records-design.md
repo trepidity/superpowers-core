@@ -273,6 +273,32 @@ Acceptance scenarios (fresh sessions, installed plugin):
 8. finishing-a-development-branch lists the records the branch touched and
    changes no status.
 
+### Acceptance rulings (owner, 2026-11-11)
+
+1. Scenario 1: "A" — the agent runs it in a disposable scratch repo with a
+   fresh session on the owner's plan; the owner accepts from the transcript
+   and the tree.
+2. Scenario 2: "Use JCode repo" — brainstorm in `/Users/jared/Projects/JCode`,
+   which keeps records in seven domains; pass means recon names what it
+   opened and opens a subset, not every record.
+3. Scenario 3: "A" — a tiny real utility in the scratch repo is the topic;
+   over- or under-extraction is reported as a finding, not corrected.
+4. Scenario 4: "A" — chained in the scratch repo after scenario 5 accepts a
+   record: a second design restates it in one place and contradicts it in
+   another; order of the run is 1, 3, 5, 4, 6.
+5. Scenario 5: "A" — the agent passes `accept <ID>` as the next prompt in
+   the scratch run, as the owner's words authorised in this interview; pass
+   means only the status key changes, in one commit naming act and date.
+6. Scenario 6: "A" — full SDD run over every task of the scratch plan in a
+   fresh session, including the Completion Evidence step at finish.
+7. Scenario 7: "A" — a hand-written two-task legacy plan with a `Spec:` line
+   in the scratch repo, run with executing-plans in a fresh session.
+8. Scenario 8: "Don't overdo it, but enough to prove" — read as option A:
+   observed on scenario 6's branch as its SDD run finishes, no extra
+   finishing step. The scratch repo is kept until the owner accepts all
+   eight, then deleted; transcripts and tree listings stay in the session
+   scratchpad and the results are recorded here.
+
 ## Left to the builder
 
 Exact prose of the skill edits; how the project-records references are
