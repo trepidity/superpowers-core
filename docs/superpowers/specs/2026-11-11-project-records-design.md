@@ -299,6 +299,33 @@ Acceptance scenarios (fresh sessions, installed plugin):
    eight, then deleted; transcripts and tree listings stay in the session
    scratchpad and the results are recorded here.
 
+### Acceptance run (agent-observed, 2026-11-11; owner acceptance pending)
+
+Fresh `claude -p` sessions on the owner's plan, plugin read live from this
+working tree at f052246. Scratch repo: a Python `renamer` tool. Order run:
+1, 3, 5, 4, 6 (with 8), 7, and 2 in JCode.
+
+| Scenario | Observed | Notes |
+| --- | --- | --- |
+| 1 | Pass | Native conversation, design document committed, no `docs/domains/`, no mention of records |
+| 2 | Pass | JCode, 39 records in 7 domains: 9 read in full, 2 in part, each named; search hits listed as not opened; nothing written |
+| 3 | Pass | 2 REQ, 6 ADR, 1 SPEC, 1 PLAN, all proposed, full metadata; plan record has the H2 shape and `Governing:` per task; design gained only the footer; hand-off listed IDs and offered `accept` |
+| 4 | Pass | 7 records revised in place, no duplicates; contradiction with accepted REN-REQ-002 named by brainstorming and by writing-plans; new REQ with `supersedes`, old gains `superseded_by` only; plan still written |
+| 5 | Pass | One `status` line changed, one commit naming act and date, body untouched |
+| 6 | Pass | Every dispatch carried `Governing:` paths, global constraints and the unnamed-record rule; implementers reported none beyond the list; last brief has no trailing sections; statuses left proposed by ruling; Completion Evidence written in its own commit |
+| 7 | Pass | Legacy plan with `Spec:` ran under executing-plans; reviewer dispatch named the spec and no governing-records text; no record changed |
+| 8 | Pass | Finishing named the one record the branch changed; status counts unchanged |
+
+Findings for the owner, not corrected:
+- Six decisions for a tool this size is slight over-extraction; REN-ADR-006
+  records a known limit, not a choice.
+- The plan record's Governing Records line copies each record's status at
+  writing time, so it goes stale on `accept`. Candidate: drop status from
+  that line; the record carries it.
+- Scenario 7's finishing step reported a "record gap" for conventions that
+  exist only in a `docs/superpowers/` spec. Correct per the rule; noted as
+  the behaviour an owner will see on legacy plans in a repo with records.
+
 ## Left to the builder
 
 Exact prose of the skill edits; how the project-records references are
