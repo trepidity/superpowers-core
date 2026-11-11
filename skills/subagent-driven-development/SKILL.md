@@ -496,6 +496,12 @@ took on your human partner's behalf reach them — they read it and rework
 whatever you got wrong. A ruling that dies with the workspace was a decision
 made in secret.
 
+If the plan is a plan record, write its `## Completion Evidence` now from
+the ledger — one line per task naming what was observed and the commit, and
+one line per pending acceptance — and commit it under your human partner's
+commit instructions. The ledger dies with the workspace; the record is what
+remains.
+
 When the final review and all selected acceptance gates pass, preserve the
 reports and observations in the durable handoff before deleting this plan's
 workspace. Git commits alone do not preserve untracked UAT evidence. Keep the

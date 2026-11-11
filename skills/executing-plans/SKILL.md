@@ -304,6 +304,12 @@ line under "Deferred minors". Both lists are exhaustive. Your final
 message is the only place the decisions you took on your human partner's
 behalf — and the findings you chose not to act on — reach them.
 
+If the plan is a plan record, write its `## Completion Evidence` now from
+the ledger — one line per task naming what was observed and the commit, and
+one line per pending acceptance — and commit it under your human partner's
+commit instructions. The ledger dies with the workspace; the record is what
+remains.
+
 When all selected acceptance gates pass, preserve the evidence in the handoff before deleting this
 plan's workspace directory — the git history is the record now. Sibling
 directories belong to other plans; leave them alone.

@@ -31,7 +31,11 @@ fi
 # (another task, or a plan section such as "## Dependencies and Risks"), so
 # the last task of a plan record does not swallow the sections after it.
 awk -v n="$n" '
-  /^```/ { infence = !infence }
+  /^[ \t]*(```|~~~)/ {
+    f = ($0 ~ /^[ \t]*```/) ? "```" : "~~~"
+    if (!infence) { infence = 1; fence = f }
+    else if (f == fence) infence = 0
+  }
   !infence && /^#+[ \t]+Task[ \t]+[0-9]+/ {
     intask = ($0 ~ ("^#+[ \t]+Task[ \t]+" n "([^0-9]|$)"))
     if (intask) { match($0, /^#+/); level = RLENGTH }

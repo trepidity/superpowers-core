@@ -4,8 +4,10 @@ Statuses: `proposed`, `accepted`, `rejected`, `superseded`, `retired`.
 
 ## Transitions
 
-Each happens when the owner says so about that named record. Record the
-date in the record's Evidence.
+Each happens when the owner says so about that named record. The change
+is the `status` key and the commit that carries it; the commit message names
+the owner's act and its date. The body is not edited for a status change, so
+a plan record's Completion Evidence stays `None.` until the plan is done.
 
 - proposed to accepted
 - proposed to rejected

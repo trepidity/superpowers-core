@@ -76,7 +76,8 @@ Done by writing-plans, after the owner approves the design document.
 
 Statuses are `proposed`, `accepted`, `rejected`, `superseded`, `retired`. A
 new record is `proposed`. A status changes only when the owner says so about
-that record ("accept CORE-REQ-004"); record the date in Evidence. An existing
+that record ("accept CORE-REQ-004"); the commit that changes `status` names
+the act and its date, and the body is untouched. An existing
 record keeps its status when edited. Status describes the record; it never
 conditions work. A plan executes against proposed records exactly as against
 accepted ones, because the owner approved the design and the plan.
