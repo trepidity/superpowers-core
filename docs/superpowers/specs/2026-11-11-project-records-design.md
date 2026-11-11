@@ -326,6 +326,17 @@ Findings for the owner, not corrected:
   exist only in a `docs/superpowers/` spec. Correct per the rule; noted as
   the behaviour an owner will see on legacy plans in a repo with records.
 
+Owner's response, 2026-11-11: accept the run; fix findings 1 and 2; keep the
+finding-3 observation but name existing spec coverage and require no
+migration. Fixed in 2da8d92 (project-records SKILL.md and templates,
+writing-plans, finishing-a-development-branch). Original evidence preserved;
+scenarios 3 and 7 rerun on clean clones of the scratch repo:
+
+| Scenario | Rerun | Notes |
+| --- | --- | --- |
+| 3 | Pass | 2 REQ, 5 ADR, 1 SPEC, 1 PLAN; the check-to-rename race went to the specification's Scope and the requirement's Excluded line, not a decision; Governing Records lines carry no status |
+| 7 | Pass | Finishing named `docs/superpowers/specs/2026-11-11-repo-hygiene-design.md` as the coverage, called nothing a gap, changed no record or status |
+
 ## Left to the builder
 
 Exact prose of the skill edits; how the project-records references are
