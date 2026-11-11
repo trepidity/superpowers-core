@@ -19,6 +19,8 @@ Subagent (general-purpose):
 
     [Scene-setting: where this fits, dependencies, architectural context]
 
+    [GOVERNING_RECORDS_PARAGRAPH — plan record only; omit for a legacy
+    Spec: plan:]
     Governing records for this task: [GOVERNING_RECORDS] (paths). Read
     them. You may read another record under `docs/domains/` when the code
     you touch points at it; report any record you relied on that this
@@ -160,6 +162,7 @@ Subagent (general-purpose):
 ```
 
 **Placeholders:**
+- `[GOVERNING_RECORDS_PARAGRAPH]` — include the paragraph only when the plan
+  is a record; for a legacy `Spec:` plan omit the whole paragraph
 - `[GOVERNING_RECORDS]` — the paths from the task's `Governing:` line and the
-  plan's Governing Records that bind it; `none (legacy plan)` when the plan
-  names only a Spec
+  plan's Governing Records that bind it

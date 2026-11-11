@@ -98,7 +98,7 @@ header content placed as follows:
 
 | H2 | Holds |
 | --- | --- |
-| Outcome and Scope | Goal, Architecture, Tech Stack, Included, Excluded |
+| Outcome and Scope | Outcome (the goal), Architecture, Tech Stack, Included, Excluded |
 | Governing Records | One line per record: `ID — path — status — what it constrains`; the design document path; then `### Global Constraints` (as below) |
 | Steps | One `### Task N` per task (Task Structure below) |
 | Dependencies and Risks | Dependencies, risks, then `### Review Focus` (as below) |
@@ -234,14 +234,15 @@ to read. When the plan is a record, the hand-off opens with the records:
 changed: `<IDs>`; prefix `<PREFIX>` (new). Say `accept <IDs>` to mark any
 of these accepted."** Add **"Contradiction with `<ID>`: <one line>."** when
 the design contradicted an accepted record. Then continue below.
- If they have already explicitly supplied an execution method, ask
+
+If they have already explicitly supplied an execution method, ask
 them to review the plan and confirm it captures what they want; wait for that
 review before implementation, then use the preserved method. Otherwise, ask
 them to review the plan and choose an execution method before implementation.
 
 **When no execution method has already been supplied:**
 
-**"Plan complete and saved to `docs/superpowers/plans/<filename>.md`. Please review the plan. Which execution approach would you prefer?**
+**"Plan complete and saved to `<plan path>`. Please review the plan. Which execution approach would you prefer?**
 
 - **Subagent-driven** - A fresh subagent implements each task and a fresh reviewer checks it before the next one starts, then a whole-branch review at the end. Most thorough; costs a fresh context per task and per review.
 - **Native** - I implement every task myself in this session, the way this harness runs work, then one fresh reviewer on the most capable model checks the whole branch. Cheapest and fastest; no independent review until the end. Runs well with a mid-tier session model, since the plan carries the design.
@@ -250,7 +251,7 @@ them to review the plan and choose an execution method before implementation.
 
 **When an execution method has already been supplied:**
 
-**"Plan complete and saved to `docs/superpowers/plans/<filename>.md`. Please review the plan. Does it capture what you want?"**
+**"Plan complete and saved to `<plan path>`. Please review the plan. Does it capture what you want?"**
 
 **If Subagent-driven chosen:**
 - **REQUIRED SUB-SKILL:** Use superpowers-core:subagent-driven-development

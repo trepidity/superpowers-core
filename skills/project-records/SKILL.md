@@ -30,8 +30,8 @@ edited in the same file. A real replacement gets a new ID, and the two files
 point at each other through `supersedes` and `superseded_by`.
 
 Use the repository's existing domains and prefixes. For a new domain, pick a
-short prefix no record uses yet and state it in the plan hand-off. Nothing
-else confirms it.
+short prefix no record uses yet and state it in the plan hand-off. No
+confirmation step follows.
 
 ## Reading records
 
@@ -65,7 +65,7 @@ Done by writing-plans, after the owner approves the design document.
 | Design content | Record and section |
 | --- | --- |
 | Intent and why, goals | Requirement: Business Requirements, Functional Requirements |
-| Non-goals, anti-goals | Requirement: Scope, Excluded; an observable anti-goal becomes a negative acceptance criterion |
+| Non-goals, anti-goals | Requirement: Scope (Excluded line); an observable anti-goal becomes a negative acceptance criterion |
 | Constraints | The requirement or specification they constrain; a constraint chosen among alternatives is a decision |
 | Choices the owner made among alternatives | One decision each: Question and Context, Alternatives, Rationale, Consequences |
 | Interfaces, states, error behavior, data contracts | One specification per cohesive contract, single-domain included |

@@ -21,6 +21,7 @@ Subagent (general-purpose):
     ## What Was Requested
 
     Read the task brief: [BRIEF_FILE]
+    Governing records: [GOVERNING_RECORDS]
 
     Global constraints from the spec/design or governing records that bind this task:
     [GLOBAL_CONSTRAINTS]
@@ -180,6 +181,7 @@ Subagent (general-purpose):
 - `[MODEL]` — REQUIRED: reviewer model per SKILL.md Model Selection
 - `[BRIEF_FILE]` — REQUIRED: the task brief file (`bash scripts/task-brief PLAN N`
   prints the path; same file the implementer worked from)
+- `[GOVERNING_RECORDS]` — the record paths the implementer was given, or `none (legacy plan)`
 - `[GLOBAL_CONSTRAINTS]` — the binding requirements copied verbatim from
   the plan's Global Constraints section, the spec, or the task's governing
   records: exact values, formats,

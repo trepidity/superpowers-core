@@ -7,10 +7,11 @@
 - `docs/domains/DOMAIN/specs/spec-NNN-TITLE.md`: type specification, identifier PREFIX-SPEC-NNN
 - `docs/domains/DOMAIN/plans/plan-NNN-TITLE.md`: type plan, identifier PREFIX-PLAN-NNN
 
-Also recognised when present, not created by this skill: `docs/architecture.md`,
-`docs/infrastructure.md`, `docs/domains/DOMAIN/architecture.md`, and glossary
-terms at `docs/glossary/DOMAIN/TERM.md`. Read a domain architecture for the
-interfaces another domain owns.
+Also recognised when present, not created by this skill: root documents
+(AGENTS.md, CLAUDE.md, README.md, CONTRIBUTING.md, SECURITY.md, CHANGELOG.md),
+`docs/architecture.md`, `docs/infrastructure.md`,
+`docs/domains/DOMAIN/architecture.md`, and glossary terms at
+`docs/glossary/DOMAIN/TERM.md`.
 
 Titles and domains are lowercase ASCII kebab-case. NNN is at least three
 digits and matches the identifier suffix. Identifiers are never reused or
