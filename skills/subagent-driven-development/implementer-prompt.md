@@ -19,6 +19,12 @@ Subagent (general-purpose):
 
     [Scene-setting: where this fits, dependencies, architectural context]
 
+    Governing records for this task: [GOVERNING_RECORDS] (paths). Read
+    them. You may read another record under `docs/domains/` when the code
+    you touch points at it; report any record you relied on that this
+    list did not name. A constraint you need that is in none of them is
+    NEEDS_CONTEXT, not a search.
+
     ## Before You Begin
 
     If you have questions about:
@@ -152,3 +158,8 @@ Subagent (general-purpose):
     Use BLOCKED if you cannot complete the task. Use NEEDS_CONTEXT if you need
     information that wasn't provided. Never silently produce work you're unsure about.
 ```
+
+**Placeholders:**
+- `[GOVERNING_RECORDS]` — the paths from the task's `Governing:` line and the
+  plan's Governing Records that bind it; `none (legacy plan)` when the plan
+  names only a Spec

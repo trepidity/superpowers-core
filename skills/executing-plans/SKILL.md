@@ -37,7 +37,7 @@ between tasks. They chose inline execution to spend less, not to answer
 without stopping.
 
 **Rulings, not stalls.** Conflicts, ambiguities, plan defects — decide them.
-The spec is the binding authority, the plan is its argument, and your
+The spec or governing records are the binding authority, the plan is its argument, and your
 judgment settles what neither answers. Record every decision in the ledger
 as `Ruling: <what you decided> — <why> — <what it costs if wrong>`, and keep
 going. Deviating from the plan without a ledgered ruling is a decision made
@@ -150,10 +150,10 @@ and the new one resumes from the same ledger.
   if that happens, recover from `git log`.
 
 Read the plan once, note its context and Global Constraints, and create a
-todo per task. If the plan names a Spec, read that too: the spec is the
-authority the plan argues from, and conflicts inside the plan resolve
-against it. A plan with no reachable spec gets a ledger note saying so —
-rulings made without one are provisional.
+todo per task. If the plan names a Spec or lists Governing Records, read
+those too: they are the authority the plan argues from, and conflicts
+inside the plan resolve against them. A plan with neither reachable gets a
+ledger note saying so — rulings made without one are provisional.
 
 Read the shared `verification-policy`. Carry the selected mode and source
 into every task brief. Core does not load the optional testing module. Correct
@@ -165,7 +165,7 @@ what an earlier task produces, one ledger row — the two tasks, what one
 produces against what the other consumes, and what you found. Tasks that
 share nothing get no row; a plan whose tasks share nothing gets the single
 line `Pre-flight: no shared interfaces`. Rule on each conflict a row
-surfaces with the spec as the binding authority, record the ruling beside
+surfaces with the spec or governing records as the binding authority, record the ruling beside
 its row, and start Task 1. Each task's own text is checked when you read
 its brief, not here.
 
@@ -250,7 +250,7 @@ Run `../subagent-driven-development/scripts/review-package PLAN_FILE MERGE_BASE 
 available model — the whole-branch review is a judgment task — using
 superpowers-core:requesting-code-review's
 [code-reviewer.md](../requesting-code-review/code-reviewer.md), with the
-package path, the plan and spec paths, the plan's Review Focus section
+package path, the plan path and the spec or governing record paths, the plan's Review Focus section
 verbatim if it has one (the input classes and failure modes the plan's
 verification scenarios do not exercise — the reviewer checks each deliberately), and a
 pointer to the ledger's `Ruling:` lines so it can weigh the calls you
