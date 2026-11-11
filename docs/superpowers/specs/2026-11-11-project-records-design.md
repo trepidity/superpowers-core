@@ -292,3 +292,8 @@ split; the wording of the recon report and the hand-off list.
 - No Steps or Packages table in the plan record.
 - `task-brief` is the only script change; `sdd-workspace` is untouched.
 - Measurement is deferred; no efficiency claim is made.
+
+## Records
+
+None. This repository keeps no `docs/domains/`; the plan is
+`docs/superpowers/plans/2026-11-11-project-records.md`.

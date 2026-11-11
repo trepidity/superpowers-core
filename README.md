@@ -10,6 +10,12 @@ authoring is optional. See [UPSTREAM.md](UPSTREAM.md) for version and attributio
 - **superpowers-testing**: optional techniques under `optional/testing/skills/`.
   Core does not load this module. Installing it does not select automated mode.
 
+**Project records.** When a project keeps requirements, decisions,
+specifications and plans under `docs/domains/`, writing-plans breaks an
+approved design out into those records and writes the plan as a record;
+execution and review read the records the plan names. See
+`skills/project-records/`.
+
 The shared **verification-policy** skill in the skills repository owns UAT-only,
 automated, and hybrid selection. Install that shared skill through the shared
 repository's mirror installer before using this plugin. The core adapter at
