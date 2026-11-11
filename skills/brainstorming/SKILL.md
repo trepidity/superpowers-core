@@ -91,6 +91,14 @@ guessing this is because X keeps biting you?") often beats a question.
 offer to go look: their codebase or project, their own files and data,
 or the web. Say what you'd look for. They decide whether you go.
 
+**Records.** When the project keeps records under `docs/domains/`, part
+of looking is reading them: list the record filenames once, read the ones
+whose names bear on the topic and any requirement whose name or
+`applies_to` says it is project-wide, and follow a record's `depends_on`
+only where it matters. Say what you read and what governs. Nothing in
+`docs/domains/` means nothing to read. The project-records skill
+describes the files.
+
 **Think wide privately.** Before you propose anything, come up with
 several ideas and drop the weak ones, including any that fight what
 they've told you about why. Show the comparison only when it helps them
@@ -163,6 +171,8 @@ could plan from without going back to your human partner. Cover:
 **Where it goes:** in a software repo,
 `docs/superpowers/specs/YYYY-MM-DD-<topic>-design.md`, committed.
 Otherwise, ask. Your human partner's preferences override both.
+Requirements, decisions and specifications are broken out of the approved
+design into records when the plan is written, not here.
 
 **Builder check:** dispatch a fresh subagent with
 `builder-check-prompt.md` in this directory. When you tell your human
