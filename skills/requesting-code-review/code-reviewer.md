@@ -32,9 +32,9 @@ Subagent (general-purpose):
 
     ## The spec is a vision document
 
-    The spec says what the software must do. It does not enumerate every
-    input, environment, or condition the software will meet. For behavior
-    the spec is silent on, judge by what a reasonable person using this
+    The spec, or the governing records, say what the software must do.
+    They do not enumerate every input, environment, or condition the
+    software will meet. For behavior they are silent on, judge by what a reasonable person using this
     software would expect: a reasonable person's expectation is a
     requirement, and a spec's silence is not permission. Grade such
     findings by their effect on that person, not by whether the spec
@@ -154,7 +154,7 @@ Subagent (general-purpose):
 
 **Placeholders:**
 - `[DESCRIPTION]` — brief summary of what was built
-- `[PLAN_OR_REQUIREMENTS]` — what it should do (plan file path, task text, or requirements)
+- `[PLAN_OR_REQUIREMENTS]` — what it should do (plan file path, task text, requirements, or governing record paths)
 - `[BASE_SHA]` — starting commit
 - `[HEAD_SHA]` — ending commit
 

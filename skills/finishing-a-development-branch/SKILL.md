@@ -28,6 +28,14 @@ If acceptance is pending, a branch or draft handoff may still be ready; do not
 claim accepted completion or merge past a required gate without authority.
 When the selected requirements for the requested action are satisfied, continue.
 
+## Step 1b: Records
+
+When the project keeps records under `docs/domains/`, list the records this
+branch created or changed (`git diff --name-only <base>..HEAD -- docs/domains`)
+for the hand-off. Apply superpowers-core:project-records, *When a change owes
+a record*, once to what the branch did that no record covers: write the
+record or name the gap in the hand-off. Change no record's status here.
+
 ## Step 2: Detect Environment
 
 ```bash
