@@ -99,7 +99,7 @@ header content placed as follows:
 | H2 | Holds |
 | --- | --- |
 | Outcome and Scope | Outcome (the goal), Architecture, Tech Stack, Included, Excluded |
-| Governing Records | One line per record: `ID — path — status — what it constrains`; the design document path; then `### Global Constraints` (as below) |
+| Governing Records | One line per record: `ID — path — what it constrains` (no status: the record carries it, and a copy goes stale on `accept`); the design document path; then `### Global Constraints` (as below) |
 | Steps | One `### Task N` per task (Task Structure below) |
 | Dependencies and Risks | Dependencies, risks, then `### Review Focus` (as below) |
 | Verification | Mode, authority source, required checks, who accepts UAT |

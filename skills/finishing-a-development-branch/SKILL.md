@@ -34,7 +34,10 @@ When the project keeps records under `docs/domains/`, list the records this
 branch created or changed (`git diff --name-only <base>..HEAD -- docs/domains`)
 for the hand-off. Apply superpowers-core:project-records, *When a change owes
 a record*, once to what the branch did that no record covers: write the
-record or name the gap in the hand-off. Change no record's status here.
+record or name the gap in the hand-off. Where a document outside
+`docs/domains/` covers it (a `docs/superpowers/` spec, a README), say so and
+name that document; that is coverage, not a gap, and nothing is migrated.
+Change no record's status here.
 
 ## Step 2: Detect Environment
 

@@ -182,8 +182,8 @@ superseded_by: []
 - Excluded: <non-goals, or None.>.
 
 ## Governing Records
-- SEC-REQ-001 — `docs/domains/secrets/requirements/req-001-<topic>.md` — proposed — <obligation being delivered>.
-- SEC-SPEC-001 — `docs/domains/secrets/specs/spec-001-<topic>.md` — proposed — <contract being implemented>.
+- SEC-REQ-001 — `docs/domains/secrets/requirements/req-001-<topic>.md` — <obligation being delivered>.
+- SEC-SPEC-001 — `docs/domains/secrets/specs/spec-001-<topic>.md` — <contract being implemented>.
 - Design: `docs/superpowers/specs/<YYYY-MM-DD>-<topic>-design.md`.
 
 ### Global Constraints

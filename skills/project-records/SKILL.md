@@ -52,8 +52,12 @@ Done by writing-plans, after the owner approves the design document.
    Never write a duplicate. A contradiction with an accepted record is named
    in the hand-off for the owner; the plan is still written.
 2. **Extract.** Using the table below. One requirement per independent
-   obligation, one decision per choice, one specification per cohesive
-   contract. Each record's Evidence carries one line:
+   obligation, one decision per lasting choice among real alternatives, one
+   specification per cohesive contract. A known limit, an accepted risk or
+   a gap left open is not a decision: it goes in the specification (Scope or
+   Error Behavior) or the requirement's Excluded line. A choice the design
+   made because only one option was reasonable is routine and gets no
+   record. There is no count to hit in either direction. Each record's Evidence carries one line:
    `Source: <design path> at <commit>, approved by <owner> on <YYYY-MM-DD>.`
    New records are `proposed`.
 3. **Write the plan as a plan record** whose Governing Records cite each
@@ -70,7 +74,8 @@ Done by writing-plans, after the owner approves the design document.
 | Choices the owner made among alternatives | One decision each: Question and Context, Alternatives, Rationale, Consequences |
 | Interfaces, states, error behavior, data contracts | One specification per cohesive contract, single-domain included |
 | What is left to the builder | Specification Scope: a `Builder's discretion:` line |
-| Calls the agent made for the owner to check | Lasting choices: proposed decisions. Anything a later worker must know: the relevant specification. Routine choices: no record |
+| Calls the agent made for the owner to check | Lasting choices among alternatives: proposed decisions. Anything a later worker must know: the relevant specification. Routine choices: no record |
+| Known limits, accepted risks, gaps left open | Specification: Scope or Error Behavior; or the requirement's Excluded line. Never a decision |
 
 ## Lifecycle
 
@@ -94,6 +99,10 @@ Classify by what the change means, not what it is called.
   behavior: specification.
 - Multi-step work: plan.
 - Restoring documented behavior: nothing.
+- Behavior a document outside `docs/domains/` already covers (a
+  `docs/superpowers/` spec, a README): nothing owed. Name that document as
+  the coverage in the hand-off. Nothing is migrated into records for being
+  old; a record is written when the behavior changes.
 
 ## Metadata defaults
 
