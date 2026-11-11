@@ -89,7 +89,8 @@ and `spec-001-filesystem-and-authority-model.md` at PKC main `eafe717`.
   per file.
 - **Lifecycle.** `proposed, accepted, rejected, superseded, retired`. A
   new record is `proposed`. Status changes only when the owner says so
-  about that record, and the agent records the date in Evidence. An
+  about that record; the commit that changes `status` names the act and
+  its date, and the body is untouched. An
   existing record keeps its status when edited. These are descriptions of
   the record, not conditions for work: a plan executes against proposed
   records exactly as against accepted ones, because the owner approved the
@@ -261,8 +262,8 @@ Acceptance scenarios (fresh sessions, installed plugin):
 4. Writing-plans where the design restates an existing record: that record
    is edited in place and no duplicate appears; a contradiction with an
    accepted record is named in the hand-off and the plan is still written.
-5. Owner says `accept <ID>`: only that record's status changes, with the
-   date in Evidence.
+5. Owner says `accept <ID>`: only that record's `status` changes, in a
+   commit naming the act and its date; the body is untouched.
 6. SDD on the scenario 3 plan: each brief carries its task's `Governing:`
    records and Global Constraints; the last task's brief contains no
    trailing plan sections; an implementer that reads an unnamed record
